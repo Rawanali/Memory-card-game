@@ -1,0 +1,264 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 660px;
+    margin: auto;
+}
+
+.game-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 42px;
+    height: 50px;
+}
+
+.score-panel {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.score-panel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.score-star-box {
+    width: 35%;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: #FFD500;
+    font-size: 20px;
+}
+
+
+.score-panel .moves {
+    margin: 0 auto;
+    width: 25%;
+}
+
+.score-restart-box {
+    width: 15%;
+}
+
+.score-panel .restart {
+    margin: 0 auto;
+    cursor: pointer;
+    width: 25%;
+}
+
+.fa-repeat {
+    font-size: 25px;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/* Modal Content */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    //border: 1px solid #888;
+    border: 6px solid lightseagreen;
+    border-radius: 16px;
+    width: 80%;
+}
+
+.modal-stars li {
+    list-style: none;
+    display: inline-block;
+    color: #ff14d3;
+    font-size: 30px;
+}
+
+.modal-again {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Anton", sans-serif;
+    margin-left: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid lightseagreen;
+    border-radius: 13px;
+}
+
+.modal-results {
+    font-size: 25px;
+}
+
+#modal-again-yes {
+    padding-left: 13px;
+    padding-right: 13px;
+    background-color: greenyellow;
+}
+
+#modal-again-no {
+    color: #414142;
+}
+
+/* For smaller devices */
+
+@media only screen and (max-width:  450px) {
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 375px;
+    }
+
+    .game-title {
+        font-size: 35px;
+    }
+
+    .score-panel-item {
+        font-weight: bold;
+        margin: 2px;
+    }
+
+    .score-panel .stars li {
+        font-size: 28px;
+    }
+
+    .fa-repeat {
+        font-size: 30px;
+    }
+
+    .deck {
+        margin: 0 auto;
+        width: 100%;
+        height: 320px;
+        min-height: 500px;
+        box-shadow: none;
+    }
+
+    .deck .card {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media only screen and (min-width: 451px) and (max-width:  700px) {
+
+    .container {
+        margin: 0 auto;
+        width: 450px;
+    }
+
+    .score-panel-item {
+        font-weight: bold;
+        font-size: 15px;
+        margin: 2px;
+    }
+
+    .fa-repeat {
+        font-size: 20px;
+    }
+
+    .deck {
+        margin: 0 auto;
+        width: 100%;
+        height: 320px;
+        min-height: 500px;
+        box-shadow: none;
+    }
+
+    .deck .card {
+        height: 82px;
+        width: 82px;
+    }
+}
